@@ -29,5 +29,8 @@ namespace HumanAndDoggo.Data
         {
             return new ApplicationDbContext();
         }
+        public System.Data.Entity.DbSet<HumanAndDoggo.Data.Doggo> Doggos { get; set; }
+        public System.Data.Entity.DbSet<HumanAndDoggo.Data.Human> Humans { get; set; }
+        public System.Data.Entity.DbSet<HumanAndDoggo.Data.Kennel> Kennels { get; set; }
     }
 }

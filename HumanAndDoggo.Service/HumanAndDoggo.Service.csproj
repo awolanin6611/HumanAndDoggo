@@ -75,11 +75,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoggoService.cs" />
+    <Compile Include="HumanService.cs" />
+    <Compile Include="KennelService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HumanAndDoggo.Data\HumanAndDoggo.Data.csproj">
+      <Project>{8DD2DD1D-FA27-4685-80C5-54FF291D74FB}</Project>
+      <Name>HumanAndDoggo.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HumanAndDoggo.Model\HumanAndDoggo.Model.csproj">
+      <Project>{E248003D-0AE2-4F28-8FB8-2CBBAF53B496}</Project>
+      <Name>HumanAndDoggo.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
