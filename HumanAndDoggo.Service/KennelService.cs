@@ -10,7 +10,7 @@ namespace HumanAndDoggo.Service
 {
     public class KennelService
     {
-        public bool Create(KennelCreate kennelCreate)
+        public bool CreateKennel(KennelCreate kennelCreate)
         {
             Kennel kennel = new Kennel
             {

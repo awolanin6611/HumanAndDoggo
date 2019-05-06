@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace HumanAndDoggo.Controllers
 {
-    [Authorize]
+   
     public class ValuesController : ApiController
     {
         // GET api/values
