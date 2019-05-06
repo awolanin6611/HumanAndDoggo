@@ -14,14 +14,14 @@ namespace HumanAndDoggo.Controllers
         public IHttpActionResult Get()
         {
             var service = new DoggoService();
-            var kennel = service.GetDoggos();
-            return Ok(kennel);
+            var doggo = service.GetDoggos();
+            return Ok(doggo);
         }
         public IHttpActionResult GetById(int id)
         {
             var service = new DoggoService();
-            var kennel = service.GetDoggoById(id);
-            return Ok(kennel);
+            var doggo = service.GetDoggoById(id);
+            return Ok(doggo);
         }
         public IHttpActionResult Post(DoggoCreate doggo)
         {
