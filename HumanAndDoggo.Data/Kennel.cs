@@ -9,7 +9,7 @@ namespace HumanAndDoggo.Data
 {
     public enum Size
     {
-        Small = 1, Medium, Large, XLarge
+        Small, Medium, Large, XLarge
     }
     public class Kennel
     {

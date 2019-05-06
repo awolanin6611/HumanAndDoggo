@@ -20,6 +20,9 @@ using HumanAndDoggo.Data;
 
 namespace HumanAndDoggo.Controllers
 {
+#if !DEBUG
+    [RequireHttps]
+#endif
     [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
@@ -385,7 +388,7 @@ namespace HumanAndDoggo.Controllers
             base.Dispose(disposing);
         }
 
-        #region Helpers
+#region Helpers
 
         private IAuthenticationManager Authentication
         {
@@ -490,6 +493,6 @@ namespace HumanAndDoggo.Controllers
             }
         }
 
-        #endregion
+#endregion
     }
 }

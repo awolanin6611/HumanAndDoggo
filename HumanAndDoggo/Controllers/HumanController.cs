@@ -28,7 +28,7 @@ namespace HumanAndDoggo.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
             var service = new HumanService();
-            if (!service.CreateHuman(human))
+            if (!service.Create(human))
                 return InternalServerError();
             return Ok();
         }

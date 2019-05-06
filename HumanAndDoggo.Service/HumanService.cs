@@ -10,14 +10,14 @@ namespace HumanAndDoggo.Service
 {
     public class HumanService
     {
-        public bool CreateHuman(HumanCreate model)
+        public bool Create(HumanCreate createHuman)
         {
             Human human = new Human()
             {
-                FullName = model.FullName,
-                Address = model.Address,
-                Phone = model.Phone,
-                Email = model.Email
+                FullName = createHuman.FullName,
+                Address = createHuman.Address,
+                Phone = createHuman.Phone,
+                Email = createHuman.Email
 
             };
             using (var ctx = new ApplicationDbContext())
