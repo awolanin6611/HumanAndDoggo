@@ -14,7 +14,7 @@ namespace HumanAndDoggo.Controllers
         public IHttpActionResult Get()
         {
             var service = new HumanService();
-            var human = service.GetHuman();
+            var human = service.GetHumans();
             return Ok(human);
         }
         public IHttpActionResult GetHumanById(int humanID)

@@ -10,7 +10,7 @@ namespace HumanAndDoggo.Model
     public class DoggoDelete
     {
         public int DoggoID { get; set; }
-        public string Name { get; set; }
+        public string DoggoName { get; set; }
         public string Breed { get; set; }
         public Size Size { get; set; }
         public int HumanID { get; set; }

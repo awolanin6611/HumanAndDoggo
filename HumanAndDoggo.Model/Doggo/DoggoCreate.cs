@@ -13,7 +13,7 @@ namespace HumanAndDoggo.Model
         [Required]
         [MinLength(2, ErrorMessage = "Please enter more than two characters")]
         [MaxLength(100, ErrorMessage = "There are too many characters in this field")]
-        public string Name { get; set; }
+        public string DoggoName { get; set; }
         [Required]
         public string Breed { get; set; }
         [Required]

@@ -1,10 +1,7 @@
 ﻿using HumanAndDoggo.Data;
 using HumanAndDoggo.Model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HumanAndDoggo.Service
 {
@@ -14,7 +11,7 @@ namespace HumanAndDoggo.Service
         {
             var entity = new Doggo
             {
-                Name = doggoCreate.Name,
+                DoggoName = doggoCreate.DoggoName,
                 Breed = doggoCreate.Breed,
                 Size = doggoCreate.Size,
                 HumanID = doggoCreate.HumanID,
@@ -43,7 +40,7 @@ namespace HumanAndDoggo.Service
                                new DoggoListItem
                                {
                                    DoggoID = p.DoggoID,
-                                   Name = p.Name,
+                                   DoggoName = p.DoggoName,
                                    Breed = p.Breed,
                                    Size = p.Size,
                                    HumanID = ctx.Humans.FirstOrDefault(c => c.HumanID == p.HumanID).FullName,
@@ -70,7 +67,7 @@ namespace HumanAndDoggo.Service
                 return
                     new DoggoListItem
                     {
-                        Name = entity.Name,
+                        DoggoName = entity.DoggoName,
                         Breed = entity.Breed,
                         Size = entity.Size,
                         HumanID = ctx.Humans.FirstOrDefault(c => c.HumanID == entity.HumanID).FullName,
@@ -92,7 +89,7 @@ namespace HumanAndDoggo.Service
                         .Doggos
                         .Single(e => e.DoggoID == model.DoggoID);
 
-                entity.Name = model.Name;
+                entity.DoggoName = model.DoggoName;
                 entity.Breed = model.Breed;
                 entity.Size = model.Size;
                 entity.HumanID = model.HumanID;
