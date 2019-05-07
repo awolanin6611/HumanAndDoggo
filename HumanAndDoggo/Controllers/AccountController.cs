@@ -17,11 +17,16 @@ using HumanAndDoggo.Models;
 using HumanAndDoggo.Providers;
 using HumanAndDoggo.Results;
 using HumanAndDoggo.Data;
+using AuthorizeAttribute = System.Web.Http.AuthorizeAttribute;
+using RoutePrefixAttribute = System.Web.Http.RoutePrefixAttribute;
+using RouteAttribute = System.Web.Http.RouteAttribute;
+using OverrideAuthenticationAttribute = System.Web.Http.OverrideAuthenticationAttribute;
+using AllowAnonymousAttribute = System.Web.Http.AllowAnonymousAttribute;
 
 namespace HumanAndDoggo.Controllers
 {
 #if !DEBUG
-    [RequireHttps]
+    [System.Web.Mvc.RequireHttps]
 #endif
     [Authorize]
     [RoutePrefix("api/Account")]
