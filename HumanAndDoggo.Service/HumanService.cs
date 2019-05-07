@@ -10,23 +10,23 @@ namespace HumanAndDoggo.Service
 {
     public class HumanService
     {
-        public bool Create(HumanCreate createHuman)
+        public bool Create(HumanCreate humanCreate)
         {
-            Human human = new Human()
+            var entity = new Human()
             {
-                FullName = createHuman.FullName,
-                Address = createHuman.Address,
-                Phone = createHuman.Phone,
-                Email = createHuman.Email
+                FullName = humanCreate.FullName,
+                Address = humanCreate.Address,
+                Phone = humanCreate.Phone,
+                Email = humanCreate.Email
 
             };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Humans.Add(human);
+                ctx.Humans.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<HumanListItem> GetHuman()
+        public IEnumerable<HumanListItem> GetHumans()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -42,8 +42,7 @@ namespace HumanAndDoggo.Service
                             Address = p.Address,
                             Email = p.Email,
                             Phone = p.Phone,
-                            DoggoNames = p.DoggoNames
-
+                            DoggoName = p.DoggoName
                         }
                         );
                 return query.ToArray();
@@ -65,7 +64,7 @@ namespace HumanAndDoggo.Service
                         Address = entity.Address,
                         Phone = entity.Phone,
                         Email = entity.Email,
-                        DoggoNames = entity.DoggoNames
+                        DoggoName = entity.DoggoName
                     };
             }
         }
@@ -81,7 +80,7 @@ namespace HumanAndDoggo.Service
                 entity.Address = model.Address;
                 entity.Phone = model.Phone;
                 entity.Email = model.Email;
-                entity.DoggoNames = model.DoggoNames;
+                entity.DoggoName = model.DoggoName;
 
                 return ctx.SaveChanges() == 1;
             }
