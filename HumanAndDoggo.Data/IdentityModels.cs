@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Data.Entity;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -29,8 +30,8 @@ namespace HumanAndDoggo.Data
         {
             return new ApplicationDbContext();
         }
-        public System.Data.Entity.DbSet<HumanAndDoggo.Data.Doggo> Doggos { get; set; }
-        public System.Data.Entity.DbSet<HumanAndDoggo.Data.Human> Humans { get; set; }
-        public System.Data.Entity.DbSet<HumanAndDoggo.Data.Kennel> Kennels { get; set; }
+        public DbSet<DoggoAway> Doggos { get; set; }
+        public DbSet<Human> Humans { get; set; }
+        public DbSet<Kennel> Kennels { get; set; }
     }
 }

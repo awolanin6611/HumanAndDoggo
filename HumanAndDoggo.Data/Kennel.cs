@@ -9,7 +9,7 @@ namespace HumanAndDoggo.Data
 {
     public enum Size
     {
-        Small = 1, Medium, Large, XLarge
+        Small, Medium, Large, XLarge
     }
     public class Kennel
     {
@@ -25,9 +25,11 @@ namespace HumanAndDoggo.Data
         public int DoggoID { get; set; }
         [Required]
         public string DoggoName { get; set; }
-        [Required]
-        public int HumanID { get; set; }
+
         [Required]
         public string FullName { get; set; }
+
+        public virtual Human Human { get; set; }
+        public virtual DoggoAway Doggo { get; set; }
     }
 }

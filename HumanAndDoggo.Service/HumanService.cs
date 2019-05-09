@@ -10,23 +10,23 @@ namespace HumanAndDoggo.Service
 {
     public class HumanService
     {
-        public bool CreateHuman(HumanCreate model)
+        public bool Create(HumanCreate humanCreate)
         {
-            Human human = new Human()
+            var entity = new Human()
             {
-                FullName = model.FullName,
-                Address = model.Address,
-                Phone = model.Phone,
-                Email = model.Email
+                FullName = humanCreate.FullName,
+                Address = humanCreate.Address,
+                Phone = humanCreate.Phone,
+                Email = humanCreate.Email
 
             };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Humans.Add(human);
+                ctx.Humans.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<HumanListItem> GetHuman()
+        public IEnumerable<HumanListItem> GetHumans()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -41,11 +41,12 @@ namespace HumanAndDoggo.Service
                             FullName = p.FullName,
                             Address = p.Address,
                             Email = p.Email,
-                            Phone = p.Phone,
-                            DoggoNames = p.DoggoNames
-
+                            Phone = p.Phone
                         }
-                        );
+                        ).ToList();
+                foreach (var h in query)
+                    h.DoggoName = ctx.Doggos.Where(d => d.HumanID == h.HumanID).Select(s => s.DoggoName).ToList();
+
                 return query.ToArray();
             }
         }
@@ -65,7 +66,7 @@ namespace HumanAndDoggo.Service
                         Address = entity.Address,
                         Phone = entity.Phone,
                         Email = entity.Email,
-                        DoggoNames = entity.DoggoNames
+                        DoggoName = entity.DoggoName
                     };
             }
         }
@@ -77,11 +78,12 @@ namespace HumanAndDoggo.Service
                     ctx
                     .Humans
                     .Single(e => e.HumanID == model.HumanID);
+                entity.HumanID = model.HumanID;
                 entity.FullName = model.FullName;
                 entity.Address = model.Address;
                 entity.Phone = model.Phone;
                 entity.Email = model.Email;
-                entity.DoggoNames = model.DoggoNames;
+                
 
                 return ctx.SaveChanges() == 1;
             }

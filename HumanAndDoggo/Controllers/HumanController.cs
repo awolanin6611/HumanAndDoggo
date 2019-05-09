@@ -14,7 +14,7 @@ namespace HumanAndDoggo.Controllers
         public IHttpActionResult Get()
         {
             var service = new HumanService();
-            var human = service.GetHuman();
+            var human = service.GetHumans();
             return Ok(human);
         }
         public IHttpActionResult GetHumanById(int humanID)
@@ -28,7 +28,7 @@ namespace HumanAndDoggo.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
             var service = new HumanService();
-            if (!service.CreateHuman(human))
+            if (!service.Create(human))
                 return InternalServerError();
             return Ok();
         }

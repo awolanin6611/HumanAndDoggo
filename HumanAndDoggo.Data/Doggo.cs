@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace HumanAndDoggo.Data
 {
-    public class Doggo
+    public class DoggoAway
     {
         [Key]
         public int DoggoID { get; set; }
-        public string Name { get; set; }
+        public string DoggoName { get; set; }
         public string Breed { get; set; }
         public Size Size { get; set; }
         [Display(Name = "Person")]
@@ -25,5 +25,7 @@ namespace HumanAndDoggo.Data
         public string SpecialNeeds { get; set; }
         public string Age { get; set; }
         public string Image { get; set; }
+
+        public virtual Human Human { get; set; }
     }
 }

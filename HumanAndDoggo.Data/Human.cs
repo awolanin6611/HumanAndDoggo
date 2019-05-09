@@ -18,7 +18,8 @@ namespace HumanAndDoggo.Data
         [Required]
         public string Phone { get; set; }
         public string Email { get; set; }
-        public List<string> DoggoNames { get; set; }
+        public List<string> DoggoName { get; set; }
+
 
     }
 }
