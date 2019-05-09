@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HumanAndDoggo.Data
 {
-    public class DoggoAway
+    public class Doggo
     {
         [Key]
         public int DoggoID { get; set; }

@@ -30,7 +30,7 @@ namespace HumanAndDoggo.Data
         {
             return new ApplicationDbContext();
         }
-        public DbSet<DoggoAway> Doggos { get; set; }
+        public DbSet<Doggo> Doggos { get; set; }
         public DbSet<Human> Humans { get; set; }
         public DbSet<Kennel> Kennels { get; set; }
     }
