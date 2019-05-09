@@ -9,7 +9,7 @@ namespace HumanAndDoggo.Service
     {
         public bool Create(DoggoCreate doggoCreate)
         {
-            var entity = new Doggo
+            var entity = new DoggoAway
             {
                 DoggoName = doggoCreate.DoggoName,
                 Breed = doggoCreate.Breed,

@@ -41,10 +41,12 @@ namespace HumanAndDoggo.Service
                             FullName = p.FullName,
                             Address = p.Address,
                             Email = p.Email,
-                            Phone = p.Phone,
-                            DoggoName = p.DoggoName
+                            Phone = p.Phone
                         }
-                        );
+                        ).ToList();
+                foreach (var h in query)
+                    h.DoggoName = ctx.Doggos.Where(d => d.HumanID == h.HumanID).Select(s => s.DoggoName).ToList();
+
                 return query.ToArray();
             }
         }
@@ -76,11 +78,12 @@ namespace HumanAndDoggo.Service
                     ctx
                     .Humans
                     .Single(e => e.HumanID == model.HumanID);
+                entity.HumanID = model.HumanID;
                 entity.FullName = model.FullName;
                 entity.Address = model.Address;
                 entity.Phone = model.Phone;
                 entity.Email = model.Email;
-                entity.DoggoName = model.DoggoName;
+                
 
                 return ctx.SaveChanges() == 1;
             }
