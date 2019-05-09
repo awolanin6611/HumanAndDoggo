@@ -16,7 +16,10 @@ namespace HumanAndDoggo.Service
             {
                 KennelNumber = kennelCreate.KennelNumber,
                 Size = kennelCreate.Size,
-                Occupied = kennelCreate.Occupied
+                Occupied = kennelCreate.Occupied,
+                DoggoID = kennelCreate.DoggoID,
+                DoggoName = kennelCreate.DoggoName,
+                FullName = kennelCreate.FullName,
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -71,12 +74,14 @@ namespace HumanAndDoggo.Service
                     ctx
                         .Kennels
                         .Single(e => e.KennelID == model.KennelID);
+                entity.KennelNumber = model.KennelNumber;
                 entity.KennelID = model.KennelID;
                 entity.Occupied = model.Occupied;
                 entity.DoggoID = model.DoggoID;
                 entity.DoggoName = model.DoggoName;
-                entity.HumanID = model.HumanID;
+                
                 entity.FullName = model.FullName;
+              
 
                 return ctx.SaveChanges() == 1;
             }

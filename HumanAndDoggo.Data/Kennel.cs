@@ -25,12 +25,11 @@ namespace HumanAndDoggo.Data
         public int DoggoID { get; set; }
         [Required]
         public string DoggoName { get; set; }
-        [Required]
-        public int HumanID { get; set; }
+
         [Required]
         public string FullName { get; set; }
 
         public virtual Human Human { get; set; }
-        public virtual Doggo Doggo { get; set; }
+        public virtual DoggoAway Doggo { get; set; }
     }
 }
