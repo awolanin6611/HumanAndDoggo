@@ -92,7 +92,6 @@ namespace HumanAndDoggo.Service
                 entity.DoggoName = model.DoggoName;
                 entity.Breed = model.Breed;
                 entity.Size = model.Size;
-                entity.HumanID = model.HumanID;
                 entity.DoggoFriendly = model.DoggoFriendly;
                 entity.PeopleFriendly = model.PeopleFriendly;
                 entity.SpecialNeeds = model.SpecialNeeds;

@@ -78,7 +78,7 @@ namespace HumanAndDoggo.Service
                     ctx
                     .Humans
                     .Single(e => e.HumanID == model.HumanID);
-                entity.HumanID = model.HumanID;
+                //entity.HumanID = model.HumanID;
                 entity.FullName = model.FullName;
                 entity.Address = model.Address;
                 entity.Phone = model.Phone;
