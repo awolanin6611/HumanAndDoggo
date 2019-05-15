@@ -67,6 +67,7 @@ namespace HumanAndDoggo.Service
                 return
                     new DoggoListItem
                     {
+                        DoggoID = entity.DoggoID,
                         DoggoName = entity.DoggoName,
                         Breed = entity.Breed,
                         Size = entity.Size,
