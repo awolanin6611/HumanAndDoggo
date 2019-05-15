@@ -17,10 +17,10 @@ namespace HumanAndDoggo.Controllers
             var human = service.GetHumans();
             return Ok(human);
         }
-        public IHttpActionResult GetHumanById(int humanID)
+        public IHttpActionResult Get(int id)
         {
             var service = new HumanService();
-            var human = service.GetHumanById(humanID);
+            var human = service.GetHumanById(id);
             return Ok(human);
         }
         public IHttpActionResult Post(HumanCreate human)
