@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HumanAndDoggo.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,7 @@ namespace HumanAndDoggo.Model
         public bool Occupied { get; set; }
         public string DoggoName { get; set; }
         public string FullName { get; set; }
+        public Size Size { get; set; }
+        public string DoggoID { get; set; }
     }
 }

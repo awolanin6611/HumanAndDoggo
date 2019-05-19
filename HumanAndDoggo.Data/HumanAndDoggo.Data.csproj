@@ -107,6 +107,10 @@
     <Compile Include="Migrations\201905091852486_tacoes.Designer.cs">
       <DependentUpon>201905091852486_tacoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905151949059_tacos1.cs" />
+    <Compile Include="Migrations\201905151949059_tacos1.Designer.cs">
+      <DependentUpon>201905151949059_tacos1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -123,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905091852486_tacoes.resx">
       <DependentUpon>201905091852486_tacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905151949059_tacos1.resx">
+      <DependentUpon>201905151949059_tacos1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
