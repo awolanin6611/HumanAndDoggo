@@ -19,6 +19,7 @@ namespace HumanAndDoggo.Service
                 Occupied = kennelCreate.Occupied,
                 DoggoID = kennelCreate.DoggoID,
                 DoggoName = kennelCreate.DoggoName,
+
                 //FullName = kennelCreate.FullName,
             };
 

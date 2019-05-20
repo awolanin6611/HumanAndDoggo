@@ -26,7 +26,6 @@ namespace HumanAndDoggo.Data
         
         public string DoggoName { get; set; }
 
-        
         public string FullName { get; set; }
 
         public virtual Human Human { get; set; }
