@@ -17,9 +17,9 @@ namespace HumanAndDoggo.Service
                 KennelNumber = kennelCreate.KennelNumber,
                 Size = kennelCreate.Size,
                 Occupied = kennelCreate.Occupied,
-                DoggoID = kennelCreate.DoggoID,
-                DoggoName = kennelCreate.DoggoName,
-                FullName = kennelCreate.FullName,
+                //DoggoID = kennelCreate.DoggoID,
+                //DoggoName = kennelCreate.DoggoName,
+                //FullName = kennelCreate.FullName,
             };
 
             using (var ctx = new ApplicationDbContext())
