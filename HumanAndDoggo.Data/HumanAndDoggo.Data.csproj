@@ -95,42 +95,12 @@
     <Compile Include="Human.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Kennel.cs" />
-    <Compile Include="Migrations\201905091506417_taco.cs" />
-    <Compile Include="Migrations\201905091506417_taco.Designer.cs">
-      <DependentUpon>201905091506417_taco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905091659296_tacos.cs" />
-    <Compile Include="Migrations\201905091659296_tacos.Designer.cs">
-      <DependentUpon>201905091659296_tacos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905091852486_tacoes.cs" />
-    <Compile Include="Migrations\201905091852486_tacoes.Designer.cs">
-      <DependentUpon>201905091852486_tacoes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905151949059_tacos1.cs" />
-    <Compile Include="Migrations\201905151949059_tacos1.Designer.cs">
-      <DependentUpon>201905151949059_tacos1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905091506417_taco.resx">
-      <DependentUpon>201905091506417_taco.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905091659296_tacos.resx">
-      <DependentUpon>201905091659296_tacos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905091852486_tacoes.resx">
-      <DependentUpon>201905091852486_tacoes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905151949059_tacos1.resx">
-      <DependentUpon>201905151949059_tacos1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
