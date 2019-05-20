@@ -17,8 +17,9 @@ namespace HumanAndDoggo.Service
                 KennelNumber = kennelCreate.KennelNumber,
                 Size = kennelCreate.Size,
                 Occupied = kennelCreate.Occupied,
-                //DoggoID = kennelCreate.DoggoID,
-                //DoggoName = kennelCreate.DoggoName,
+                DoggoID = kennelCreate.DoggoID,
+                DoggoName = kennelCreate.DoggoName,
+
                 //FullName = kennelCreate.FullName,
             };
 
@@ -39,30 +40,33 @@ namespace HumanAndDoggo.Service
                             p =>
                                 new KennelListItem
                                 {
+                                    KennelID = p.KennelID,
                                     KennelNumber = p.KennelNumber,
                                     Occupied = p.Occupied,
-                                    DoggoName = p.DoggoName,
-                                    FullName = p.FullName
+                                    FullName = p.FullName,
+                                    Size = p.Size,
+                                    DoggoID = ctx.Doggos.FirstOrDefault(c => c.DoggoID == p.DoggoID).DoggoName,
                                 });
                 return query.ToArray();
             }
         }
-        public KennelListItem GetKennelByNumber(int kennelNumber)
+        public KennelListItem GetKennelByNumber(int kennelID)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                     .Kennels
-                    .Single(e => e.KennelNumber == kennelNumber);
+                    .Single(e => e.KennelID == kennelID);
                 return
                     new KennelListItem
                     {
                         KennelID = entity.KennelID,
                         KennelNumber = entity.KennelNumber,
-                        DoggoName = entity.DoggoName,
                         FullName = entity.FullName,
-                        Occupied = entity.Occupied
+                        Occupied = entity.Occupied,
+                        Size = entity.Size,
+                        DoggoID = ctx.Doggos.FirstOrDefault(c => c.DoggoID == entity.DoggoID).DoggoName,
                     };
             }
         }
@@ -79,7 +83,7 @@ namespace HumanAndDoggo.Service
                 entity.Occupied = model.Occupied;
                 entity.DoggoID = model.DoggoID;
                 entity.DoggoName = model.DoggoName;
-                
+                entity.Size = model.Size;
                 entity.FullName = model.FullName;
               
 

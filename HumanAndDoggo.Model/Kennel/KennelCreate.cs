@@ -18,10 +18,6 @@ namespace HumanAndDoggo.Model
         public bool Occupied { get; set; }
         [Required]
         public int DoggoID { get; set; }
-        [Required]
         public string DoggoName { get; set; }
-
-        [Required]
-        public string FullName { get; set; }
     }
 }

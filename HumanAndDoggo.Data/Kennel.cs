@@ -21,9 +21,9 @@ namespace HumanAndDoggo.Data
         public Size Size { get; set; }
         [Required]
         public bool Occupied { get; set; }
-      
+        
         public int DoggoID { get; set; }
-    
+        
         public string DoggoName { get; set; }
 
         public string FullName { get; set; }
