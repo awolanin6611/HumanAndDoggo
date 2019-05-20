@@ -22,6 +22,7 @@ using RoutePrefixAttribute = System.Web.Http.RoutePrefixAttribute;
 using RouteAttribute = System.Web.Http.RouteAttribute;
 using OverrideAuthenticationAttribute = System.Web.Http.OverrideAuthenticationAttribute;
 using AllowAnonymousAttribute = System.Web.Http.AllowAnonymousAttribute;
+using System.Web.Http.Cors;
 
 namespace HumanAndDoggo.Controllers
 {
@@ -29,6 +30,7 @@ namespace HumanAndDoggo.Controllers
     [System.Web.Mvc.RequireHttps]
 #endif
     [Authorize]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
