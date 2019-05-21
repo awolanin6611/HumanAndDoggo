@@ -36,30 +36,30 @@ namespace HumanAndDoggo.Data
         public DbSet<Human> Humans { get; set; }
         public DbSet<Kennel> Kennels { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder
-                .Conventions
-                .Remove<PluralizingTableNameConvention>();
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder
+        //        .Conventions
+        //        .Remove<PluralizingTableNameConvention>();
 
-            modelBuilder
-                .Configurations
-                .Add(new IdentityUserLoginConfiguration())
-                .Add(new IdentityUserRoleConfiguration());
-        }
-        public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
-        {
-            public IdentityUserLoginConfiguration()
-            {
-                HasKey(iul => iul.UserId);
-            }
-        }
-        public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
-        {
-            public IdentityUserRoleConfiguration()
-            {
-                HasKey(iur => iur.UserId);
-            }
-        }
+        //    modelBuilder
+        //        .Configurations
+        //        .Add(new IdentityUserLoginConfiguration())
+        //        .Add(new IdentityUserRoleConfiguration());
+        //}
+        //public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+        //{
+        //    public IdentityUserLoginConfiguration()
+        //    {
+        //        HasKey(iul => iul.UserId);
+        //    }
+        //}
+        //public class IdentityUserRoleConfiguration : EntityTypeConfiguration<IdentityUserRole>
+        //{
+        //    public IdentityUserRoleConfiguration()
+        //    {
+        //        HasKey(iur => iur.UserId);
+        //    }
+        //}
     }
 }
