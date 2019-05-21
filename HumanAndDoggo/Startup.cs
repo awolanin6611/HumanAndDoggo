@@ -4,6 +4,7 @@ using System.Linq;
 using HumanAndDoggo.Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Cors;
 using Microsoft.Owin;
 using Owin;
 
@@ -15,7 +16,8 @@ namespace HumanAndDoggo
     {
         public void Configuration(IAppBuilder app)
         {
-            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+            app.UseCors(CorsOptions.AllowAll);
+            //app.UseCors(CorsOptions.AllowAll);
             ConfigureAuth(app);
             createRolesAndUsers();
         }
@@ -32,6 +34,7 @@ namespace HumanAndDoggo
                 roleManager.Create(role);
 
                 var user = new ApplicationUser();
+                user.UserName = "Admin";
                 user.Email = "human@doggo.kennel";
                 string userPWD = "humananddoggo";
 
@@ -39,7 +42,7 @@ namespace HumanAndDoggo
 
                 if (chkUser.Succeeded)
                 {
-                    var result1 = UserManager.AddToRole(user.Email, "Admin");
+                    var result1 = UserManager.AddToRole(user.Id, "Admin");
                 }
 
             }

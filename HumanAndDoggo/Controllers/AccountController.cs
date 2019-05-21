@@ -29,8 +29,8 @@ namespace HumanAndDoggo.Controllers
 #if !DEBUG
     [System.Web.Mvc.RequireHttps]
 #endif
-    [Authorize]
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    //[Authorize]
+    //[EnableCors(origins: "*", headers: "*", methods: "*")]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
@@ -77,7 +77,7 @@ namespace HumanAndDoggo.Controllers
             return new UserInfoViewModel
             {
                 Email = User.Identity.GetUserName(),
-               Role = role,
+                Role = role,
                 HasRegistered = externalLogin == null,
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
